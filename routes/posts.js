@@ -32,7 +32,7 @@ router.post("/", async (req,res) => {
 //get specific post
 router.get("/:post_id", async (req,res) =>{
     try {
-        const post = await Post.findById(req.params.post_id)
+        const post = await Post.findById( req.params.post_id )
         res.json(post)
     } catch (err) {
         res.json({ message: err })
@@ -67,5 +67,6 @@ router.patch("/:post_id", async (req,res) => {
         res.json({ message: err })
     }
 })
+
 
 module.exports = router
