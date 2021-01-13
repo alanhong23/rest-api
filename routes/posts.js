@@ -54,6 +54,7 @@ router.delete("/:post_id", async (req,res) => {
 
 //update specific post
 router.patch("/:post_id", async (req,res) => {
+
     try {
         await Post.updateOne(
             { _id: req.params.post_id }, 
@@ -66,6 +67,7 @@ router.patch("/:post_id", async (req,res) => {
     } catch (err) {
         res.json({ message: err })
     }
+    
 })
 
 
