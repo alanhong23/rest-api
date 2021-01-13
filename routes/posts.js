@@ -32,7 +32,7 @@ router.post("/", async (req,res) => {
 //get specific post
 router.get("/:post_id", async (req,res) =>{
     try {
-        const post = await Post.findById(req.params.post_id)
+        const post = await Post.findById( req.params.post_id )
         res.json(post)
     } catch (err) {
         res.json({ message: err })
@@ -54,6 +54,7 @@ router.delete("/:post_id", async (req,res) => {
 
 //update specific post
 router.patch("/:post_id", async (req,res) => {
+
     try {
         await Post.updateOne(
             { _id: req.params.post_id }, 
@@ -66,6 +67,8 @@ router.patch("/:post_id", async (req,res) => {
     } catch (err) {
         res.json({ message: err })
     }
+    
 })
+
 
 module.exports = router
